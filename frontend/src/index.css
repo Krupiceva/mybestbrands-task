@@ -137,4 +137,82 @@ a.app-btn:hover{
   padding-bottom: 8rem;
 }
 
+/* Product Area */
+.card-body{
+  padding-top: 0;
+}
 
+.product-brand-name{
+	text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+}
+
+.card-img{
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.product-image:hover{
+  opacity: 0.7;
+}
+
+.product-brand-name:hover{
+  text-decoration: none;
+  color: #000;
+}
+
+.product-category {
+	font-size: 14px;
+}
+
+.new-price {
+	color: #ec19ca;
+	padding-right: 1rem;
+}
+
+.old-price {
+	text-decoration: line-through;
+}
+
+.pink-link a{
+ text-transform: uppercase;
+ text-decoration: none;
+ color: #000;
+ font-weight: bold;
+}
+
+.pink-link a:hover{
+  color: #ec19ca;
+	text-decoration: none;
+}
+
+.pink-link {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
+}
+
+.like-col {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 0.2rem !important;
+}
+
+.like {
+  background: url(https://www.mybestbrands.de/eaglestatic/icons/black-heart-outline.svg)
+		50% no-repeat;
+	display: inline-block;
+	cursor: pointer;
+	width: 2rem;
+	height: 2rem;
+}
+
+.like:hover {
+	background: url(https://www.mybestbrands.de/eaglestatic/icons/pink-heart-outline.svg)
+		50% no-repeat;
+}

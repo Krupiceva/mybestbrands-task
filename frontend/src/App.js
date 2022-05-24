@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import Footer from './components/Footer'
+import HomeScreen from './screens/HomeScreen'
 import { Container } from 'react-bootstrap'
 
 const App = () => {
@@ -8,7 +9,7 @@ const App = () => {
 			<Header />
 			<main>
 				<Container fluid>
-					<h1>Naslov</h1>
+					<HomeScreen />
 				</Container>
 			</main>
 			<Footer />

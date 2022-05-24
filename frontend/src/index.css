@@ -1,0 +1,140 @@
+body {
+	font-family: Alegreya Sans, sans-serif;
+	font-size: 16px;
+}
+
+main {
+	min-height: 80vh;
+}
+
+.dark-bg {
+	background-color: #000;
+	color: white;
+}
+
+/* Header Area */
+.navbar-dark .navbar-nav .nav-link
+{
+    color:#fff;
+}
+
+.nav-link:hover{
+  text-decoration: underline;
+}
+
+.topnav_nav-separator {
+	color: #fff;
+	padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.nav-heart {
+	background: url(https://www.mybestbrands.de/eaglestatic/icons/white-heart-outline.svg)
+		bottom no-repeat;
+	background-size: 20px;
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+/* Footer Area */
+.footer-container {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.app-btn{
+  border: 1px solid white;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+a.app-btn{
+  color: #fff;
+  text-decoration: none;
+}
+
+a.app-btn:hover{
+  background-color: #fff;
+  color: #000;
+}
+
+.footer-image{
+  height: 3.6rem;
+  margin-bottom: 4rem;
+}
+
+.footer-nav{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+
+}
+
+.footer-nav a{
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: .8rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.footer-nav a:hover{
+  text-decoration: underline;
+}
+
+.footer-follow-us{
+  font-style: italic;
+  letter-spacing: .07rem;
+  text-transform: uppercase;
+  padding-top: 3rem;
+}
+
+.footer-follow-us-heart{
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.social-media{
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-media-icon{
+  width: 28px;
+  height: 28px;
+  border: 2px solid #fff;
+  margin-left: 3px;
+  margin-right: 3px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.social-media-icon:hover{
+  background-color: #fff;
+}
+
+.social-media-icon:hover svg{
+  fill: #000
+}
+
+#copyright{
+  padding-top: 3rem;
+  padding-bottom: 8rem;
+}
+
+

@@ -275,7 +275,6 @@ a.zum-shop-btn:hover{
   background-color: #222;
 }
 
-
 .dropdown-toggle{
   width: 100%;
   border-radius: 0;
@@ -301,6 +300,10 @@ a.zum-shop-btn:hover{
   border-right: 0;
 }
 
+.dropdown-toggle::after {
+  display: none;
+}
+
 .dropdown-toggle.btn:active{
   background-color: #fff !important;
   color: #000 !important;
@@ -312,6 +315,10 @@ a.zum-shop-btn:hover{
   color: #000 !important;
   border-color: #000 !important;
   box-shadow: none;
+}
+
+.dropdown-custom-toggle{
+ text-align: end;
 }
 
 .dropdown-menu{
@@ -357,3 +364,27 @@ a.zum-shop-btn:hover{
   text-decoration: underline;
 }
 
+.detail-like {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  margin: 0.5rem;
+  width: 1.562rem;
+  height: 1.562rem;
+  text-align: right;
+}
+
+.detail-like-col{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.detail-category-links a{
+  color: #000;
+  text-decoration: none;
+}
+
+.detail-category-links a:hover{
+  color: #ec19ca;
+  text-decoration: none;
+}

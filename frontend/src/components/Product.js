@@ -20,11 +20,11 @@ const Product = ({ product }) => {
 
 	return (
 		<Card className='my-3  border-0 '>
-			<a href={`/product/${product.DealID}`}>
+			<a href={`/products/${product.DealID}`}>
 				<Card.Img className='product-image' src={image} alt='product-thumb' />
 			</a>
 			<Card.Body>
-				<a className='product-brand-name' href={`/product/${product.DealID}`}>
+				<a className='product-brand-name' href={`/products/${product.DealID}`}>
 					{product.Brand.Name}
 				</a>
 				<div className='product-category'>{category}</div>

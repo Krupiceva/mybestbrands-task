@@ -11,8 +11,8 @@ const App = () => {
 			<Header />
 			<main>
 				<Container fluid>
+					<Route path='/products/:id' component={ProductScreen} />
 					<Route path='/' component={HomeScreen} exact />
-					<Route path='/product/:id' component={ProductScreen} />
 				</Container>
 			</main>
 			<Footer />

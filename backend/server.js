@@ -6,10 +6,6 @@ dotenv.config()
 
 const app = express()
 
-app.get('/', (req, res) => {
-	res.send('API is running...')
-})
-
 app.get('/api/products', (req, res) => {
 	const pageSize = 8
 	const page = Number(req.query.pageNumber) || 1
@@ -38,6 +34,19 @@ app.get('/api/products/:id', (req, res) => {
 	const product = products.find((p) => p.DealID.toString() === req.params.id)
 	res.json(product)
 })
+
+const __dirname = path.resolve()
+
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static(path.join(__dirname, '/frontend/build')))
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+	})
+} else {
+	app.get('/', (req, res) => {
+		res.send('API is running...')
+	})
+}
 
 const PORT = process.env.PORT || 5000
 

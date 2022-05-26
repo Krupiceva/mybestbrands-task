@@ -11,7 +11,17 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/products', (req, res) => {
-	res.json(products)
+	const keyword = req.query.keyword
+
+	if (keyword) {
+		res.json(
+			products.filter((p) =>
+				p.Brand.Name.toLowerCase().includes(keyword.toLowerCase())
+			)
+		)
+	} else {
+		res.json(products)
+	}
 })
 
 app.get('/api/products/:id', (req, res) => {

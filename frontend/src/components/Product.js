@@ -11,7 +11,6 @@ const Product = ({ product }) => {
 	}
 
 	let image = product.Details.Media.ThumbnailImagePath
-	//let imageXXL = image.split('.jpg')[0] + '_xxl.jpg'
 
 	let price = product.Pricing.Price.Amount / 100
 	let priceString = product.Pricing.Price.FormattedString

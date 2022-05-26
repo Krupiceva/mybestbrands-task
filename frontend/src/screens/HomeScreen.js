@@ -7,18 +7,20 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { listProducts } from '../actions/productActions'
 import SearchBar from '../components/SearchBox'
+import Paginate from '../components/Paginate'
 
 const HomeScreen = ({ match }) => {
 	const dispatch = useDispatch()
 
 	const keyword = match.params.keyword
+	const pageNumber = match.params.pageNumber || 1
 
 	const productList = useSelector((state) => state.productList)
-	const { loading, error, products } = productList
+	const { loading, error, products, page, pages } = productList
 
 	useEffect(() => {
-		dispatch(listProducts(keyword))
-	}, [dispatch, keyword])
+		dispatch(listProducts(keyword, pageNumber))
+	}, [dispatch, keyword, pageNumber])
 
 	return (
 		<>
@@ -28,21 +30,30 @@ const HomeScreen = ({ match }) => {
 			) : error ? (
 				<Message variant='danger'>{error}</Message>
 			) : (
-				<Row>
-					<Col md={2}>
-						<div className='mb-2'>Marken</div>
-						<Route render={({ history }) => <SearchBar history={history} />} />
-					</Col>
-					<Col md={10}>
-						<Row>
-							{products.map((product) => (
-								<Col key={product.DealID} xs={6} sm={6} md={4} lg={4} xl={3}>
-									<Product product={product} />
-								</Col>
-							))}
-						</Row>
-					</Col>
-				</Row>
+				<>
+					<Row>
+						<Col md={2}>
+							<div className='mb-2'>Marken</div>
+							<Route
+								render={({ history }) => <SearchBar history={history} />}
+							/>
+						</Col>
+						<Col md={10}>
+							<Row>
+								{products.map((product) => (
+									<Col key={product.DealID} xs={6} sm={6} md={4} lg={4} xl={3}>
+										<Product product={product} />
+									</Col>
+								))}
+							</Row>
+						</Col>
+					</Row>
+					<Paginate
+						pages={pages}
+						page={page}
+						keyword={keyword ? keyword : ''}
+					/>
+				</>
 			)}
 		</>
 	)

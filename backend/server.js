@@ -11,17 +11,27 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/products', (req, res) => {
+	const pageSize = 8
+	const page = Number(req.query.pageNumber) || 1
 	const keyword = req.query.keyword
+	let renderedProducts
 
 	if (keyword) {
-		res.json(
-			products.filter((p) =>
-				p.Brand.Name.toLowerCase().includes(keyword.toLowerCase())
-			)
+		renderedProducts = products.filter((p) =>
+			p.Brand.Name.toLowerCase().includes(keyword.toLowerCase())
 		)
 	} else {
-		res.json(products)
+		renderedProducts = products
 	}
+
+	const count = renderedProducts.length
+	const start = pageSize * (page - 1)
+	renderedProducts = renderedProducts.slice(start, start + pageSize)
+	res.json({
+		products: renderedProducts,
+		page,
+		pages: Math.ceil(count / pageSize),
+	})
 })
 
 app.get('/api/products/:id', (req, res) => {
